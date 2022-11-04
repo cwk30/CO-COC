@@ -12,11 +12,11 @@ from flask_sqlalchemy import Pagination
 from app.forms import (UserRegistrationForm, UserLoginForm, UserUpdateAccountForm, CashierRegistrationForm,CashierLoginForm)
 from app.models import (User)
 
-@app.route('/')
+@app.route('/',methods = ['POST', 'GET'])
 def home():
     return redirect('coc')
 
-@app.route('/coc')
+@app.route('/coc',methods = ['POST', 'GET'])
 def coc():
     return render_template('COC.html')
 
