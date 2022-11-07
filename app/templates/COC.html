@@ -12,6 +12,16 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='assets_3/css/main.css')}}" />
 		<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico')}}">
 		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets_3/css/noscript.css')}}" /></noscript>
+		<style>
+		.raquo {
+			position:relative;
+			top:-0.11em;
+		}
+		.raquo1 {
+			position:relative;
+			top:-0.05em;
+		}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -45,7 +55,7 @@
 					<section id="banner">
 						<div class="inner">
 							<center><div class="logo"><img src="{{ url_for('static', filename='images/logo.png')}}" alt="" width="50%" /></div>
-							<h2>12<sup>th</sup> C4I Bn<br>Commanding Officer<br>Change Of Command</h2>
+							<h2><span class="raquo1"><b>12</b></span><sup>th</sup> C<span class="raquo"><b>4</b></span>I Bn<br>Commanding Officer<br>Change Of Command</h2>
 							<p><b>Outgoing</b><br><a href="#one">LTC John Lai Guoquan</a></p>
 							<p><b>Incoming</b><br><a href="#two">MAJ Perry Ng Chun How</a></p>
 							<p><b>Witnessing Officer</b><br>COL Chong Shi Hao</p>
