@@ -272,7 +272,7 @@
 
 				// initialise scrollmagic scene
 				let scene = new ScrollMagic.Scene({
-				duration: animationTime,
+				duration: animationTime-1400,
 				triggerElement: intro,
 				triggerHook: 0,
 				})
@@ -289,7 +289,7 @@
 
 				scene.on("update", (e) => {
 				heightPerFrame = anim.totalFrames / animationTime; // if total animation duration === total frames, then 1px height scroll = 1 frame moved
-				delay = Math.round(e.scrollPos * heightPerFrame)-1200;
+				delay = Math.round(e.scrollPos * heightPerFrame)-1250;
 				anim.goToAndStop(delay, true);
 				});
 
