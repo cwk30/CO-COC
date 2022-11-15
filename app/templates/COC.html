@@ -29,6 +29,14 @@
 			video {
 				width: 100vw;
 			}
+			.raquo {
+				position:relative;
+				top:-0.11em;
+			}
+			.raquo1 {
+				position:relative;
+				top:-0.05em;
+			}			
 		</style>
 	</head>
 	<body class="is-preload">
@@ -253,62 +261,7 @@
 			</div>
 
 		<!-- Scripts -->
-			<!-- <script>
-				const html = document.documentElement;
-				const canvas = document.getElementById("hero-lightpass");
-				const context = canvas.getContext("2d");
-
-				const frameCount = 366;
-				const currentFrame = index => (
-					`{{ url_for('static', filename='images/seq/')}}${index.toString()}.png`
-				)
-
-				const preloadImages = () => {
-				for (let i = 1; i < frameCount; i++) {
-					const img = new Image();
-					img.src = currentFrame(i);
-				}
-				};
-
-				const img = new Image()
-				img.src = currentFrame(1);
-				canvas.width=window.innerWidth;
-				canvas.height=window.innerHeight;
-				var hRatio = canvas.width / img.width    ;
-				var vRatio = canvas.height / img.height  ;
-				var ratio  = Math.min ( hRatio, vRatio );
-				var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
-   				var centerShift_y = ( canvas.height - img.height*ratio ) / 2; 
-				img.onload=function(){
-				context.drawImage(img, 0,0, img.width, img.height, centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
-				}
-
-				const updateImage = index => {
-					canvas.width=window.innerWidth;
-				canvas.height=window.innerHeight;
-				var hRatio = canvas.width / img.width    ;
-				var vRatio = canvas.height / img.height  ;
-				var ratio  = Math.min ( hRatio, vRatio );
-				var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
-   				var centerShift_y = ( canvas.height - img.height*ratio ) / 2; 
-				img.src = currentFrame(index);
-				context.drawImage(img, 0, 0, img.width, img.height, centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
-				}
-
-				window.addEventListener('scroll', () => {  
-				const scrollTop = html.scrollTop;
-				const maxScrollTop = html.scrollHeight - window.innerHeight;
-				const scrollFraction = scrollTop / maxScrollTop;
-				const frameIndex = Math.min(
-					frameCount - 1,
-					Math.ceil(scrollFraction * frameCount)
-				);
-				
-				requestAnimationFrame(() => updateImage(frameIndex + 1))
-				});
-
-				preloadImages()
-			</script> -->
+			
 			<script>
 				const intro = document.querySelector(".intro");
 
@@ -336,7 +289,7 @@
 
 				scene.on("update", (e) => {
 				heightPerFrame = anim.totalFrames / animationTime; // if total animation duration === total frames, then 1px height scroll = 1 frame moved
-				delay = Math.round(e.scrollPos * heightPerFrame);
+				delay = Math.round(e.scrollPos * heightPerFrame)-1500;
 				anim.goToAndStop(delay, true);
 				});
 
