@@ -19,4 +19,3 @@ def home():
 @app.route('/coc',methods = ['POST', 'GET'])
 def coc():
     return render_template('COC.html')
-

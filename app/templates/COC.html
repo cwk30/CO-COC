@@ -10,17 +10,25 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='assets_3/css/main.css')}}" />
-		<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico')}}">
+		<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico')}}" />
+		<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js" integrity="sha256-peenofh8a9TIqKdPKIeQE7mJvuwh+J0To7nslvpj1jI=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js"></script>
 		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets_3/css/noscript.css')}}" /></noscript>
 		<style>
-		.raquo {
-			position:relative;
-			top:-0.11em;
-		}
-		.raquo1 {
-			position:relative;
-			top:-0.05em;
-		}
+			.intro {
+				height: 100vh;
+				width: 100vw;
+				object-fit: cover;
+			}
+			#lottie {
+				height: 100%;
+			}
+
+			video {
+				width: 100vw;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -79,7 +87,7 @@
 										
 									<p align="justify">In 2020, LTC Lai completed his Command and Staff Course at the Goh Keng Swee Command and Staff College.</p>
 										
-									<p align="justify">As CO, he ... </p>
+									<p align="justify">As CO, He led the battalion with tenacity and built a cohesive unit. He anchored the C4I Cell during Exercise DECISIVE EDGE 22 in Feb 22, and JIT-BCT 22 in Oct 22, assisting 4 SAB to develop concept and capabilities for the Multi-Domain Brigade, at the same time, being the bridge between 4 SAB with both Hq Signal and HQ Army Intelligence with regard to next generation capabilities and development.</p>
 										
 									<p align="justify">LTC Lai is married to Wendy Zheng, and they have three children – Jerial, Jarius and Jovelle.</p>
 									<!-- <a href="#" class="special">Learn more</a> -->
@@ -151,6 +159,17 @@
 									
 								</div>
 							</section>
+
+							
+								
+							<!-- <center><canvas id="hero-lightpass" /></center> -->
+							<section id="six" class="wrapper alt style1">
+								<section class="intro">
+									<div id="lottie"></div>
+								</section>
+							</section>
+								
+							
 
 					</section>
 
@@ -234,6 +253,105 @@
 			</div>
 
 		<!-- Scripts -->
+			<!-- <script>
+				const html = document.documentElement;
+				const canvas = document.getElementById("hero-lightpass");
+				const context = canvas.getContext("2d");
+
+				const frameCount = 366;
+				const currentFrame = index => (
+					`{{ url_for('static', filename='images/seq/')}}${index.toString()}.png`
+				)
+
+				const preloadImages = () => {
+				for (let i = 1; i < frameCount; i++) {
+					const img = new Image();
+					img.src = currentFrame(i);
+				}
+				};
+
+				const img = new Image()
+				img.src = currentFrame(1);
+				canvas.width=window.innerWidth;
+				canvas.height=window.innerHeight;
+				var hRatio = canvas.width / img.width    ;
+				var vRatio = canvas.height / img.height  ;
+				var ratio  = Math.min ( hRatio, vRatio );
+				var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
+   				var centerShift_y = ( canvas.height - img.height*ratio ) / 2; 
+				img.onload=function(){
+				context.drawImage(img, 0,0, img.width, img.height, centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
+				}
+
+				const updateImage = index => {
+					canvas.width=window.innerWidth;
+				canvas.height=window.innerHeight;
+				var hRatio = canvas.width / img.width    ;
+				var vRatio = canvas.height / img.height  ;
+				var ratio  = Math.min ( hRatio, vRatio );
+				var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
+   				var centerShift_y = ( canvas.height - img.height*ratio ) / 2; 
+				img.src = currentFrame(index);
+				context.drawImage(img, 0, 0, img.width, img.height, centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
+				}
+
+				window.addEventListener('scroll', () => {  
+				const scrollTop = html.scrollTop;
+				const maxScrollTop = html.scrollHeight - window.innerHeight;
+				const scrollFraction = scrollTop / maxScrollTop;
+				const frameIndex = Math.min(
+					frameCount - 1,
+					Math.ceil(scrollFraction * frameCount)
+				);
+				
+				requestAnimationFrame(() => updateImage(frameIndex + 1))
+				});
+
+				preloadImages()
+			</script> -->
+			<script>
+				const intro = document.querySelector(".intro");
+
+				const controller = new ScrollMagic.Controller();
+
+				// set desired animation time long enough so that it doesn't skip frames when scrolling fast.
+				const animationTime = 4800;
+
+				// initialise scrollmagic scene
+				let scene = new ScrollMagic.Scene({
+				duration: animationTime,
+				triggerElement: intro,
+				triggerHook: 0,
+				})
+				.setPin(intro)
+				.addTo(controller);
+
+				// initalise bodymovin
+
+				const elem = document.getElementById("lottie");
+				let anim;
+
+				let delay = 0;
+				let heightPerFrame = 0;
+
+				scene.on("update", (e) => {
+				heightPerFrame = anim.totalFrames / animationTime; // if total animation duration === total frames, then 1px height scroll = 1 frame moved
+				delay = Math.round(e.scrollPos * heightPerFrame);
+				anim.goToAndStop(delay, true);
+				});
+
+				const animateData = {
+				container: elem, //
+				renderer: "svg",
+				loop: false,
+				autoplay: false,
+				rendererSettings: { progressiveLoad: false },
+				path: "{{ url_for('static', filename='images/data.json')}}", // path to json file
+				};
+
+				anim = lottie.loadAnimation(animateData);
+			</script>
+			<!-- <script src="{{ url_for('static', filename='assets_3/js/logo.js')}}"></script> -->
 			<script src="{{ url_for('static', filename='assets_3/js/jquery.min.js')}}"></script>
 			<script src="{{ url_for('static', filename='assets_3/js/jquery.scrollex.min.js')}}"></script>
 			<script src="{{ url_for('static', filename='assets_3/js/browser.min.js')}}"></script>
