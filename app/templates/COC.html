@@ -289,7 +289,7 @@
 
 				scene.on("update", (e) => {
 				heightPerFrame = anim.totalFrames / animationTime; // if total animation duration === total frames, then 1px height scroll = 1 frame moved
-				delay = Math.round(e.scrollPos * heightPerFrame)-1500;
+				delay = Math.round(e.scrollPos * heightPerFrame)-1200;
 				anim.goToAndStop(delay, true);
 				});
 
