@@ -353,11 +353,11 @@
 				const controller = new ScrollMagic.Controller();
 
 				// set desired animation time long enough so that it doesn't skip frames when scrolling fast.
-				const animationTime = 1200;
+				const animationTime = 5616;
 
 				// initialise scrollmagic scene
 				let scene = new ScrollMagic.Scene({
-				duration: animationTime-300,
+				duration: animationTime-400,
 				triggerElement: intro,
 				triggerHook: 0,
 				})
@@ -374,12 +374,12 @@
 
 				scene.on("update", (e) => {
 				heightPerFrame = anim.totalFrames / animationTime; // if total animation duration === total frames, then 1px height scroll = 1 frame moved
-				delay = Math.round(e.scrollPos * heightPerFrame)-1650;
+				delay = Math.round(e.scrollPos * heightPerFrame)-200;
 				
 				if (delay < 0) {
 					anim.goToAndStop(0, true);
-				} else if (delay > 399) {
-					anim.goToAndStop(399, true);
+				} else if (delay > 233) {
+					anim.goToAndStop(233, true);
 				} else {
 					anim.goToAndStop(delay, true);
 				}
@@ -391,7 +391,7 @@
 				loop: false,
 				autoplay: false,
 				rendererSettings: { progressiveLoad: false },
-				path: "https://raw.githubusercontent.com/cwk30/CO-COC/main/app/static/images/data.json", // path to json file
+				path: "{{ url_for('static', filename='images/data.json')}}", // path to json file
 				};
 
 				anim = lottie.loadAnimation(animateData);
