@@ -1801,7 +1801,7 @@ canvas {
 				}
 
 					.row > * {
-						padding: 0 0 0 1.25em;
+						padding: 0 1.25em 0 1.25em;
 					}
 
 					.row.gtr-uniform {
@@ -3106,6 +3106,9 @@ canvas {
 			margin-bottom: 0;
 			opacity: 1;
 			visibility: visible;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 
 			#header h1 a {

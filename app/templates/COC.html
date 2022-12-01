@@ -9,7 +9,11 @@
 		<title>12th C4I Bn Change Of Command Ceremony</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700'>
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
 		<link rel="stylesheet" href="{{ url_for('static', filename='assets_3/css/main.css')}}" />
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css'>
 		<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico')}}" />
 		<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script> -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
@@ -36,7 +40,30 @@
 			.raquo1 {
 				position:relative;
 				top:-0.05em;
-			}			
+			}	
+			/* Only for demo purposes. */
+			
+			/* Start Gallery CSS */
+			.thumb {
+				margin-bottom: 15px;
+			}
+			.thumb:last-child {
+				margin-bottom: 0;
+			}
+			/* CSS Image Hover Effects: https://www.nxworld.net/tips/css-image-hover-effects.html */
+			.thumb 
+			figure img {
+			-webkit-filter: grayscale(30%);
+			filter: grayscale(30%);
+			-webkit-transition: .3s ease-in-out;
+			transition: .3s ease-in-out;
+			}
+			.thumb 
+			figure:hover img {
+			-webkit-filter: grayscale(0);
+			filter: grayscale(0);
+			}
+		
 		</style>
 	</head>
 	<body class="is-preload">
@@ -188,7 +215,150 @@
 									<div id="lottie"></div>
 								</section>
 							</section>
+
+							<section id="eight" class="wrapper alt style1">
+								<div class="inner">
+									<center><h2 class="major">Roll of Honour</h2>
+										<h2>LTC CHEONG YUNN SHAUR</h2>
+										<h3 style="line-height:0px">02 FEB 2010 - 11 MAY 2011</h3>
+										<br>
+										<h2>MAJ CHUA ENG KHIM</h2>
+										<h3 style="line-height:0px">12 MAY 2011 - 30 JUN 2011</h3>
+										<h2 style="line-height:40px">LTC CHUA ENG KHIM</h2>
+										<h3 style="line-height:0px">1 JUL 2011 - 14 FEB 2013</h3>
+										<br>
+										<h2>MAJ GOH ZI YANG ERIC</h2>
+										<h3 style="line-height:0px">15 FEB 2013 - 30 JUN 2014</h3>
+										<h2 style="line-height:40px">LTC GOH ZI YANG ERIC</h2>
+										<h3 style="line-height:0px">01 JUL 2014 - 14 JAN 2015</h3>
+										<br>
+										<h2>MAJ SHANE LIM JIT-JIN</h2>
+										<h3 style="line-height:0px">15 JAN 2015 - 30 JUN 2015</h3>
+										<h2 style="line-height:40px">LTC SHANE LIM JIT-JIN</h2>
+										<h3 style="line-height:0px">01 JUL 2015 -11 DEC 2016</h3>
+										<br>
+										<h2>LTC TAN SHENGYANG</h2>
+										<h3 style="line-height:0px">12 DEC 2016 - 04 DEC 2018</h3>
+										<br>
+										<h2>MAJ WONG WAI KEAT</h2>
+										<h3 style="line-height:0px">05 DEC 2018 - 30 JUN 2020</h3>
+										<h2 style="line-height:40px">LTC WONG WAI KEAT</h2>
+										<h3 style="line-height:0px">01 JUL 2020 - 20 DEC 2020</h3>
+										<br>
+										<h2>LTC LAI GUOQUAN</h2>
+										<h3 style="line-height:0px">21 DEC 2020 - 15 DEC 2022</h3>
+										<br>
+										<h2>MAJ PERRY NG</h2>
+										<h3 style="line-height:0px">16 DEC 2022 - </h3>
+										<br>
+								</section>
+							</section>
+
+							
+							
+							<section class="container">
+								<br>
+								<h1 class="my-4 text-center text-lg-left">Photo Gallery</h1>
 								
+								<div class="row gallery">
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/01.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/01.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+							
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/02.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/02.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+							
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/03.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/03.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+							
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/04.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/04.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+							
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/05.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/05.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+							
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/06.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/06.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+							
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/07.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/07.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+							
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/08.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/08.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+							
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/09.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/09.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/10.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/10.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/11.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/11.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/12.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/12.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/13.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/13.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/14.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/14.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/15.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/15.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+
+									<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+										<a href="{{ url_for('static', filename='images/thumbs/16.jpg')}}">
+											<figure><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/thumbs/16.jpg')}}" alt="Random Image"></figure>
+										</a>
+									</div>
+								
+								</div>
+							</section>
 							
 
 					</section>
@@ -396,6 +566,7 @@
 
 				anim = lottie.loadAnimation(animateData);
 			</script>
+			
 			<!-- <script src="{{ url_for('static', filename='assets_3/js/logo.js')}}"></script> -->
 			<script src="{{ url_for('static', filename='assets_3/js/jquery.min.js')}}"></script>
 			<script src="{{ url_for('static', filename='assets_3/js/jquery.scrollex.min.js')}}"></script>
@@ -403,6 +574,9 @@
 			<script src="{{ url_for('static', filename='assets_3/js/breakpoints.min.js')}}"></script>
 			<script src="{{ url_for('static', filename='assets_3/js/util.js')}}"></script>
 			<script src="{{ url_for('static', filename='assets_3/js/main.js')}}"></script>
+			<script src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script>
+			<script src="{{ url_for('static', filename='assets_3/js/script.js')}}"></script>
+			
 
 	</body>
 </html>
